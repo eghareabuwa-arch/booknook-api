@@ -1,3 +1,8 @@
+const { webcrypto } = require('crypto');
+
+if (!globalThis.crypto) {
+  globalThis.crypto = webcrypto;
+}
 const express = require('express');
 const sql = require('mssql');
 const { DefaultAzureCredential } = require('@azure/identity');
